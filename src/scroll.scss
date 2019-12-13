@@ -1,0 +1,338 @@
+#ExamplesGrid {
+  padding: 1rem 0 3rem;
+
+  @media (min-width: 620px) {
+    padding: 1rem 2rem 3rem;
+  }
+
+  .ExamplesGrid-Row {
+  }
+
+  .ExampleCard {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem 0 3rem;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -2rem;
+      right: 5rem;
+      height: 1px;
+      width: calc(100% - 10rem);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    @media (min-width: 620px) {
+      display: table-cell;
+      position: relative;
+      vertical-align: top;
+      padding: 4rem;
+      width: calc(50% - 4rem);
+      margin: 1rem 2rem;
+
+      &:after {
+        content: none;
+      }
+
+      &:nth-child(2n + 1) {
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 5rem;
+          right: 0;
+          bottom: initial;
+          width: 1px;
+          height: calc(100% - 10rem);
+        }
+      }
+    }
+  }
+
+  .ExampleCard-Head {
+    margin: 0 0 1.5rem;
+  }
+
+  .ExampleCard-Title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.87);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .ExampleCard-Links {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    float: right;
+    margin-right: 1rem;
+  }
+
+  .ExampleCard-SourceLink {
+    color: rgba(255, 255, 255, 0.54);
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    height: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      white-space: nowrap;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      margin-left: 1rem;
+      top: 1px;
+      position: relative;
+    }
+
+    &:hover {
+      color: #9ed6ff;
+    }
+  }
+
+  .ExampleCard-Description {
+    font-size: 1.625rem;
+    margin: 0 0 0.75rem;
+
+    p {
+      margin-top: 0.5rem;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 0.25rem;
+    }
+  }
+
+  .ExampleCard-Separator {
+    position: relative;
+    margin: 1rem 3rem 0;
+    color: rgba(255, 255, 255, 0.08);
+    text-align: center;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 40%;
+      top: calc(50% - 1px);
+      height: 1px;
+      background: currentColor;
+    }
+
+    &:before {
+      left: 5%;
+    }
+
+    &:after {
+      right: 5%;
+    }
+  }
+
+  .ExampleCard-Paragraph {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    min-width: 178%;
+
+    &:last-child {
+      margin: 0 0 2rem;
+    }
+  }
+
+  .ExampleCard-Holder {
+    position: relative;
+    min-height: 35rem;
+    margin: 0.75rem 0 0;
+  }
+
+  .ExampleCard.CustomStyled {
+    .ExampleCard-Holder {
+      & > .ScrollbarsCustom {
+        width: 100%;
+        height: 100%;
+
+        & > .ScrollbarsCustom-Wrapper {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          & > .ScrollbarsCustom-Scroller {
+            & > .ScrollbarsCustom-Content {
+            }
+          }
+        }
+
+        .ScrollbarsCustom-Track {
+          position: absolute;
+          border-radius: 0.25rem;
+        }
+
+        .ScrollbarsCustom-Thumb {
+          background: rgba(255, 255, 255, 0.12);
+          cursor: pointer;
+          border-radius: 0.25rem;
+
+          &:hover,
+          &.dragging {
+            background: #9ed6ff;
+          }
+        }
+
+        .ScrollbarsCustom-ThumbY {
+          width: 100%;
+        }
+
+        .ScrollbarsCustom-ThumbX {
+          height: 100%;
+        }
+
+        .ScrollbarsCustom-TrackY {
+          width: 1rem;
+          height: calc(100% - 2rem);
+          top: 1rem;
+          right: 0;
+          background: rgba(255, 255, 255, 0.04);
+        }
+
+        .ScrollbarsCustom-TrackX {
+          height: 1rem;
+          width: calc(100% - 3rem);
+          bottom: 0.5rem;
+          left: 1.5rem;
+          background: rgba(0, 0, 0, 0.2);
+        }
+
+        &.trackYVisible {
+          & > .ScrollbarsCustom-Wrapper {
+            right: 1.5rem;
+          }
+
+          & > .ScrollbarsCustom-TrackX {
+            width: calc(100% - 4rem);
+            left: 2rem;
+          }
+        }
+
+        &.trackXVisible {
+          &:hover {
+            .ScrollbarsCustom-TrackX {
+              background: #373737;
+            }
+
+            .ScrollbarsCustom-ThumbX {
+              background: #4f4f4f;
+
+              &:hover,
+              &.dragging {
+                background: #9ed6ff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ExampleCard.SizesTranslation {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: 4rem 0;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -2rem;
+      right: 5rem;
+      height: 1px;
+      width: calc(100% - 10rem);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .ExampleCard-Holder {
+      & > .ScrollbarsCustom {
+        max-width: calc(100% - 2rem);
+        max-height: calc(45rem - 2rem);
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+
+        & > .ScrollbarsCustom-Wrapper {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          & > .ScrollbarsCustom-Scroller {
+            & > .ScrollbarsCustom-Content {
+              display: table-cell;
+              padding: 0.05px;
+            }
+          }
+        }
+
+        .ScrollbarsCustom-Track {
+          position: absolute;
+          border-radius: 0.25rem;
+        }
+
+        .ScrollbarsCustom-Thumb {
+          background: rgba(255, 255, 255, 0.12);
+          cursor: pointer;
+          border-radius: 0.25rem;
+
+          &:hover,
+          &.dragging {
+            background: #9ed6ff;
+          }
+        }
+
+        .ScrollbarsCustom-ThumbY {
+          width: 100%;
+        }
+
+        .ScrollbarsCustom-ThumbX {
+          height: 100%;
+        }
+
+        .ScrollbarsCustom-TrackY {
+          width: 1rem;
+          height: calc(100% - 2rem);
+          top: 1rem;
+          right: -2rem;
+          background: rgba(255, 255, 255, 0.04);
+        }
+
+        .ScrollbarsCustom-TrackX {
+          height: 1rem;
+          width: calc(100% - 2rem);
+          bottom: -2rem;
+          left: 1rem;
+          background: rgba(255, 255, 255, 0.04);
+        }
+      }
+    }
+  }
+}
