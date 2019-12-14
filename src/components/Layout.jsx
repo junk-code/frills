@@ -25,7 +25,7 @@ const StylishMenuButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
+  transition: ${props => props.theme.animationDuration};
   background: transparent;
 `
 
@@ -33,7 +33,7 @@ const TopBar = styled.div`
   display: flex;
   align-items: center;
   height: 0;
-  transition: 0.5s;
+  transition: ${props => props.theme.animationDuration};
   opacity: 0;
   flex-shrink: 0;
   pointer-events: none;
@@ -50,7 +50,7 @@ const TopBar = styled.div`
 const StylishContentHolder = styled.div`
   background: ${props => props.theme.pageBackgroundColor};
   flex-grow: 1;
-  transition: 0.5s;
+  transition: ${props => props.theme.animationDuration};
   overflow: auto;
   color: ${props => props.theme.detailColor};
   ${props => {
@@ -66,7 +66,7 @@ const StylishContentHolder = styled.div`
 `
 
 export const Layout = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenuClick = () => {
     setIsMenuOpen(value => !value)

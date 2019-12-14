@@ -1,5 +1,6 @@
 export const theme = {
   pageBackgroundColor: 'white',
   detailColor: 'navy',
-  menuBackgroundColor: 'pink'
+  menuBackgroundColor: 'pink',
+  animationDuration: '.25s'
 }
