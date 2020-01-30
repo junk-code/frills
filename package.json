@@ -5,9 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "start": "parcel src/index.html",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "deploy": "now"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
